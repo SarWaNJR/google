@@ -5,495 +5,362 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Premier-League||Table</title>
+    <title>Document</title>
+    <script src="https://kit.fontawesome.com/617bc55c6b.js" crossorigin="anonymous"></script>
     <style>
+        @import url('https://fonts.googleapis.com/css2?family=Kanit:wght@400;500&family=Pacifico&family=Poppins:wght@800&family=Roboto+Serif:ital,opsz@1,8..144&display=swap');
+
+        :root {
+            --bs-blue: #0d6efd;
+            --bs-indigo: #6610f2;
+            --bs-purple: #6f42c1;
+            --bs-pink: #d63384;
+            --bs-red: #dc3545;
+            --bs-orange: #fd7e14;
+            --bs-yellow: #ffc107;
+            --bs-green: #198754;
+            --bs-teal: #20c997;
+            --bs-cyan: #0dcaf0;
+            --bs-black: #000;
+            --bs-white: #fff;
+            --bs-gray: #6c757d;
+            --bs-gray-dark: #343a40;
+            --bs-gray-100: #f8f9fa;
+            --bs-gray-200: #e9ecef;
+            --bs-gray-300: #dee2e6;
+            --bs-gray-400: #ced4da;
+            --bs-gray-500: #adb5bd;
+            --bs-gray-600: #6c757d;
+            --bs-gray-700: #495057;
+            --bs-gray-800: #343a40;
+            --bs-gray-900: #212529;
+            --bs-primary: #0d6efd;
+            --bs-secondary: #6c757d;
+            --bs-success: #198754;
+            --bs-info: #0dcaf0;
+            --bs-warning: #ffc107;
+            --bs-danger: #dc3545;
+            --bs-light: #f8f9fa;
+            --bs-dark: #212529;
+            --bs-primary-rgb: 13, 110, 253;
+            --bs-secondary-rgb: 108, 117, 125;
+            --bs-success-rgb: 25, 135, 84;
+            --bs-info-rgb: 13, 202, 240;
+            --bs-warning-rgb: 255, 193, 7;
+            --bs-danger-rgb: 220, 53, 69;
+            --bs-light-rgb: 248, 249, 250;
+            --bs-dark-rgb: 33, 37, 41;
+            --bs-white-rgb: 255, 255, 255;
+            --bs-black-rgb: 0, 0, 0;
+            --bs-body-color-rgb: 33, 37, 41;
+            --bs-body-bg-rgb: 255, 255, 255;
+            --bs-font-sans-serif: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", "Noto Sans", "Liberation Sans", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+            --bs-font-monospace: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+            --bs-gradient: linear-gradient(180deg, rgba(255, 255, 255, 0.15), rgba(255, 255, 255, 0));
+            --bs-body-font-family: var(--bs-font-sans-serif);
+            --bs-body-font-size: 1rem;
+            --bs-body-font-weight: 400;
+            --bs-body-line-height: 1.5;
+            --bs-body-color: #212529;
+            --bs-body-bg: #fff;
+            --bs-border-width: 1px;
+            --bs-border-style: solid;
+            --bs-border-color: #dee2e6;
+            --bs-border-color-translucent: rgba(0, 0, 0, 0.175);
+            --bs-border-radius: 0.375rem;
+            --bs-border-radius-sm: 0.25rem;
+            --bs-border-radius-lg: 0.5rem;
+            --bs-border-radius-xl: 1rem;
+            --bs-border-radius-2xl: 2rem;
+            --bs-border-radius-pill: 50rem;
+            --bs-link-color: #0d6efd;
+            --bs-link-hover-color: #0a58ca;
+            --bs-code-color: #d63384;
+            --bs-highlight-bg: #fff3cd;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
         body {
-            margin: 0 auto;
+            font-family: 'Poppins', sans-serif;
+            color: #272829;
+            background-color: #040b14;
         }
 
-        .grid {
-            display: grid;
-            grid-template-columns: repeat(6, 50px);
-            grid-template-rows: 110px;
-            background-color: #3f1052;
+
+        .container {
+            position: relative;
+        }
+
+        .side-nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            bottom: 0;
+            background-color: #040b14;
+            height: 100vh;
+            width: 25%;
+        }
+
+        .side-nav-2 {
+            position: fixed;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            background-color: #040b14;
+            height: 100vh;
+            width: 18%;
+        }
+
+        img {
+            width: 100%;
+            height: 100%;
+        }
+
+        .logo {
+            width: 220px;
+            height: 200px;
+            clip-path: circle(40%);
+            object-fit: cover;
+            object-position: top;
+            margin: auto;
+        }
+
+        .profile-name,
+        h1 {
             color: #ffff;
-            column-gap: 10rem;
-            margin-bottom: 1px;
+            text-align: center;
+            margin-top: -12px;
         }
 
-        .premier-league {
-            padding: 15px;
-            width: 130px;
-
+        .social {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 1.4em;
         }
 
-        .match {
-            padding-top: 80px;
-            padding-right: 80px;
-            padding-left: 10px;
-        }
-
-        .match:hover {
-            opacity: 0.9;
-            cursor: pointer;
-            border-bottom: 5px solid #ffff;
-            transition: opacity 1s;
-            opacity: 0.8;
-            box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.286);
-        }
-
-        .news {
-            padding-top: 80px;
-            padding-right: 70px;
-            padding-left: 20px;
-        }
-
-        .news:hover {
-            opacity: 0.9;
-            cursor: pointer;
-            border-bottom: solid #ffff;
-            border-bottom-width: 5px;
-            transition: opacity 1s;
-            opacity: 0.8;
-            box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.286);
-        }
-
-        .stand {
-            padding-top: 80px;
-            padding-right: 100px;
-            padding-left: 14px;
-        }
-
-        .stand:hover {
-            opacity: 0.9;
-            cursor: pointer;
-            border-bottom: solid #ffff;
-            border-bottom-width: 5px;
-            transition: opacity 1s;
-            opacity: 0.8;
-            box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.286);
-        }
-
-        .stats {
-            padding-top: 80px;
-            padding-right: 70px;
-            padding-left: 20px;
-        }
-
-        .stats:hover {
-            opacity: 0.9;
-            cursor: pointer;
-            border-bottom: solid #ffff;
-            border-bottom-width: 5px;
-            transition: opacity 1s;
-            opacity: 0.8;
-            box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.286);
-        }
-
-        .players {
-            padding-top: 80px;
-            padding-right: 90px;
-            padding-left: 20px;
-        }
-
-        .players:hover {
-            padding: 0 auto;
-            cursor: pointer;
-            border-bottom: solid #ffff;
-            border-bottom-width: 5px;
-            transition: opacity 1s;
-            opacity: 0.8;
-            box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.286);
-        }
-
-        .season {
-            border-bottom: 3px solid wheat;
-            border-radius: 8px;
-            width: 69.5%;
-            margin-left: 16%;
-            margin-top: 0;
-        }
-
-        .table {
-            margin-left: 16%;
-            margin-top: 20px;
-            border: 2px solid grey;
-            border-radius: 10px;
-        }
-
-        tr:nth-child(even) {
-            background-color: #ccc;
-        }
-
-        tr:nth-child(even):hover {
-            background-color: gold;
-        }
-
-        tr:nth-child(odd) {
-            background-color: #fff;
-        }
-
-        tr:nth-child(odd):hover {
-            background-color: gray;
-            color: white;
-
-        }
-
-        .grey {
-            color: #70757A;
-        }
-
-        a:link {
+        .social li i:hover {
             color: #fff;
-            text-decoration: none;
         }
 
-        /* visited link */
-        a:visited {
-            color: #fff;
-            text-decoration: none;
+        ul li {
+            list-style-type: none;
         }
 
-        /* mouse over link */
+        a {
+            text-decoration: none;
+            color: #adb5bd;
+        }
+
         a:hover {
             color: #fff;
-            text-decoration: none;
         }
 
-        /* selected link */
-        a:active {
-            color: #fff;
-            text-decoration: none;
+        .links {
+            padding: 1px;
+            margin-left: 60px;
+            /* background-color: #0a58ca; */
+        }
+
+        .links li {
+            padding: 16px;
+        }
+
+        /* icons */
+        .fa-brands {
+            color: #adb5bd;
+            font-size: 1.4rem;
+        }
+
+        .fa-house {
+            margin-right: 12px;
+            color: #149ddd;
+        }
+
+        .fa-user {
+            margin-right: 12px;
+        }
+
+        .fa-user:hover {
+            color: #149ddd;
+        }
+
+        .fa-file {
+            margin-right: 12px;
+        }
+
+        .fa-file:hover {
+            color: #149ddd;
+        }
+
+        .fa-server {
+            margin-right: 12px;
+        }
+
+        .fa-server:hover {
+            color: #149ddd;
+        }
+
+        .fa-database {
+            margin-right: 12px;
+        }
+
+        .fa-database:hover {
+            color: #149ddd;
+        }
+
+        /* footer */
+        .copy-right {
+            color: var(--bs-code-color);
+            font-size: 1.4em;
+            text-align: center;
+        }
+
+        .sarwan {
+            text-align: center;
+            font-size: 1.2em;
+            font-weight: 900;
+            color: var(--bs-success);
+        }
+
+        /* header */
+        header {
+            height: 100vh;
+            background: url("./background-imgs/profile-pic-8.JPG");
+            background-size: contain;
+            background-position: 50%;
+            object-fit: contain;
+            object-position: top;
+            background-repeat: no-repeat;
+        }
+
+        .title-heading>span {
+            display: block;
+            color: #adb5bd;
+            text-align: center;
+            font-size: 2.4rem;
+        }
+
+        .title-heading>span:hover {
+            color: #0a58ca;
+            cursor: pointer;
+            text-shadow: 2px 1px 5px gray;
+        }
+
+        .title-heading>h1 {
+            color: red;
+            font-size: 3rem;
+            margin-top: 10px;
+        }
+
+        .title-heading::after {
+            content: '';
+            display: block;
+            height: 15px;
+            background-color: #0d6efd;
+        }
+
+        .title-heading:before {
+            content: '';
+            display: block;
+            height: 15px;
+            background-color: #0d6efd;
+        }
+
+        @media screen and (max-width:460px) {
+            .side-nav {
+                position: sticky;
+                top: 0;
+                bottom: 0;
+                background-color: gray;
+                height: 100vh;
+                width: 100%;
+            }
+
+            .logo {
+                text-align: center;
+                width: 140px;
+            }
+
+            .profile-name>h1 {
+                text-align: center;
+            }
+
+            .social {
+                text-align: center;
+                margin: auto;
+            }
+
+            .header {
+                /* display: none; */
+            }
+
+            .title-heading>h1 {
+                font-size: 1.2rem;
+            }
+        }
+
+        .container-2 {
+            display: none;
         }
     </style>
 </head>
 
 <body>
-    <div class="grid">
-        <div class="premier-league">&#8592; <a class="p-league" href="https://www.premierleague.com"
-                target="_blank">Premier League</a></div>
-        <div class="match"><a class="p-league"
-                href="https://www.google.com/search?q=premier+league+table&rlz=1C1CHBD_enIN916IN917&oq=premier+league+table&aqs=chrome.0.69i59j46i67i131i433j0i67i131i433j0i67j0i67i131i433j0i67j69i60l2.7705j1j4&sourceid=chrome&ie=UTF-8#sie=lg;/g/11pz7zbpnb;2;/m/02_tc;mt;fp;1;;;"
-                target="_blank">MATCHES</a>
+    <div class="container">
+        <div class="side-nav">
+            <div class="logo">
+                <img src="./background-imgs/profile-pic-1.jpg" alt="">
+            </div>
+            <div class="profile-name">
+                <h1>Sarwan</h1>
+            </div>
+            <ul class="social">
+                <li><a href="#"><i class="fa-brands fa-twitter"></i></a></li>
+                <li><a href="#"><i class="fa-brands fa-facebook"></i></a></li>
+                <li><a href="#"><i class="fa-brands fa-instagram"></i></a></li>
+                <li><a href="#"><i class="fa-solid fa-hashtag"></i></a></li>
+                <li><a href="#"><i class="fa-brands fa-skype"></i></a></li>
+            </ul>
+            <div nav-links>
+                <ul class="links">
+                    <li><a href="#"><i class="fa-solid fa-house"></i>Home</a></li>
+                    <li><a href="#"><i class="fa-regular fa-user"></i>About</a></li>
+                    <li><a href="#"><i class="fa-regular fa-file"></i>Resume</a></li>
+                    <li><a href="#"><i class="fa-sharp fa-solid fa-server"></i>Services</a></li>
+                    <li><a href="#"><i class="fa-solid fa-database"></i>Portfolio</a></li>
+                </ul>
+            </div>
+            <hr>
+            <div class="nav-footer">
+                <p class="copy-right">© Copyright</p>
+                <p class="sarwan">Designed by <span>sarwan</span></p>
+            </div>
         </div>
-        <div class="news"><a class="p-league"
-                href="https://www.google.com/search?q=premier+league+table&rlz=1C1CHBD_enIN916IN917&oq=premier+league+table&aqs=chrome.0.69i59j46i67i131i433j0i67i131i433j0i67j0i67i131i433j0i67j69i60l2.7705j1j4&sourceid=chrome&ie=UTF-8#sie=lg;/g/11pz7zbpnb;2;/m/02_tc;nw;fp;1;;;"
-                target="_blank">NEWS</a></div>
-        <div class="stand"><a class="p-league"
-                href="https://www.google.com/search?q=premier+league+table&rlz=1C1CHBD_enIN916IN917&oq=premier+league+table&aqs=chrome.0.69i59j46i67i131i433j0i67i131i433j0i67j0i67i131i433j0i67j69i60l2.7705j1j4&sourceid=chrome&ie=UTF-8#sie=lg;/g/11pz7zbpnb;2;/m/02_tc;st;fp;1;;;"
-                target="_blank">STANDINGS</a></div>
-        <div class="stats"><a class="p-league"
-                href="https://www.google.com/search?q=premier+league+table&rlz=1C1CHBD_enIN916IN917&oq=premier+league+table&aqs=chrome.0.69i59j46i67i131i433j0i67i131i433j0i67j0i67i131i433j0i67j69i60l2.7705j1j4&sourceid=chrome&ie=UTF-8#sie=lg;/g/11pz7zbpnb;2;/m/02_tc;lb;fp;1;;;"
-                target="_blank">STATS</a></div>
-        <div class="players"><a class="p-league"
-                href="https://www.google.com/search?q=premier+league+table&rlz=1C1CHBD_enIN916IN917&oq=premier+league+table&aqs=chrome.0.69i59j46i67i131i433j0i67i131i433j0i67j0i67i131i433j0i67j69i60l2.7705j1j4&sourceid=chrome&ie=UTF-8#sie=lg;/g/11pz7zbpnb;2;/m/02_tc;pl;fp;1;;;"
-                target="_blank">PLAYERS</a></div>
     </div>
-    <div class="season">
-        <p>
-            Season
-        </p>
-        <p style="color: #4285F4;cursor: pointer; display: inline-block;margin-top:0;">2022-23</p>
-        <select style="width: 20px;border: none;color: #4285F4;">
-            <option value=""></option>
-            <option value="" selected disabled>Choose previous years results</option>
-            <option value="">2021-2022</option>
-            <option value="">2020-2021</option>
-            <option value="">2019-2020</option>
-            <option value="">2018-2019</option>
-            <option value="">2017-2018</option>
-            <option value="">2016-2017</option>
-            <option value="">2015-2016</option>
-        </select>
-    </div>
-    <table class="table" width="70%" border=0 cellspacing="0" cellpadding="10">
-        <tr>
-            <td class="grey" colspan="26">club</td>
-            <td class="grey">MP</td>
-            <td class="grey">W</td>
-            <td class="grey">D</td>
-            <td class="grey">L</td>
-            <td class="grey">GF</td>
-            <td class="grey">GA</td>
-            <td class="grey">GD</td>
-            <td class="grey">Pts</td>
-            <td class="grey">Last 5</td>
-        </tr>
-        <!-- gap here-->
-        <tr>
-            <td style="border-left: 2px solid #4285F4" ; colspan="26" ;>1 Arsenal</td>
-            <td>19</td>
-            <td>16</td>
-            <td>2</td>
-            <td>1</td>
-            <td>45</td>
-            <td>16</td>
-            <td>29</td>
-            <td>50</td>
-            <td>Last 5</td>
-        </tr>
-        <!--gap here-->
-        <tr>
-            <td style="border-left: 2px solid #4285F4" colspan="26" ;>2 Man city</td>
-            <td>20</td>
-            <td>14</td>
-            <td>3</td>
-            <td>3</td>
-            <td>53</td>
-            <td>20</td>
-            <td>33</td>
-            <td>45</td>
-            <td>Last 5</td>
-        </tr>
-        <!--gap here-->
-        <tr>
-            <td style="border-left: 2px solid #4285F4" ; colspan="26">3 Newcastle</td>
-            <td>20</td>
-            <td>14</td>
-            <td>3</td>
-            <td>3</td>
-            <td>53</td>
-            <td>20</td>
-            <td>33</td>
-            <td>45</td>
-            <td>Last 5</td>
-        </tr>
-        <!--gap here-->
-        <tr>
-            <td style="border-left: 2px solid #FA7B17" colspan="26" ;>4 Man utd
-
-            </td>
-            <td>20</td>
-            <td>14</td>
-            <td>3</td>
-            <td>3</td>
-            <td>53</td>
-            <td>20</td>
-            <td>33</td>
-            <td>45</td>
-            <td>Last 5</td>
-        </tr>
-        <!--gap here-->
-        <tr>
-            <td colspan="26">5 Man city
-
-            </td>
-            <td>20</td>
-            <td>14</td>
-            <td>3</td>
-            <td>3</td>
-            <td>53</td>
-            <td>20</td>
-            <td>33</td>
-            <td>45</td>
-            <td>Last 5</td>
-        </tr>
-        <!--gap here-->
-        <tr>
-            <td colspan="26">6 Man city
-
-            </td>
-            <td>20</td>
-            <td>14</td>
-            <td>3</td>
-            <td>3</td>
-            <td>53</td>
-            <td>20</td>
-            <td>33</td>
-            <td>45</td>
-            <td>Last 5</td>
-        </tr>
-        <!--gap here-->
-        <tr>
-            <td colspan="26">7 Man city
-
-            </td>
-            <td>20</td>
-            <td>14</td>
-            <td>3</td>
-            <td>3</td>
-            <td>53</td>
-            <td>20</td>
-            <td>33</td>
-            <td>45</td>
-            <td>Last 5</td>
-        </tr>
-        <!--gap here-->
-        <tr>
-            <td colspan="26">8 Man city
-
-            </td>
-            <td>20</td>
-            <td>14</td>
-            <td>3</td>
-            <td>3</td>
-            <td>53</td>
-            <td>20</td>
-            <td>33</td>
-            <td>45</td>
-            <td>Last 5</td>
-        </tr>
-        <!--gap here-->
-        <tr>
-            <td colspan="26">9 Man city
-
-            </td>
-            <td>20</td>
-            <td>14</td>
-            <td>3</td>
-            <td>3</td>
-            <td>53</td>
-            <td>20</td>
-            <td>33</td>
-            <td>45</td>
-            <td>Last 5</td>
-        </tr>
-        <!--gap here-->
-        <tr>
-            <td colspan="26">10 Man city
-
-            </td>
-            <td>20</td>
-            <td>14</td>
-            <td>3</td>
-            <td>3</td>
-            <td>53</td>
-            <td>20</td>
-            <td>33</td>
-            <td>45</td>
-            <td>Last 5</td>
-        </tr>
-        <!--gap here-->
-        <tr>
-            <td colspan="26">11 Man city </td>
-            <td>20</td>
-            <td>14</td>
-            <td>3</td>
-            <td>3</td>
-            <td>53</td>
-            <td>20</td>
-            <td>33</td>
-            <td>45</td>
-            <td>Last 5</td>
-        </tr>
-        <!--gap here-->
-        <tr>
-            <td colspan="26">12 Man city</td>
-            <td>20</td>
-            <td>14</td>
-            <td>3</td>
-            <td>3</td>
-            <td>53</td>
-            <td>20</td>
-            <td>33</td>
-            <td>45</td>
-            <td>Last 5</td>
-        </tr>
-        <!--gap here-->
-        <tr>
-            <td colspan="26">13 Man city </td>
-            <td>20</td>
-            <td>14</td>
-            <td>3</td>
-            <td>3</td>
-            <td>53</td>
-            <td>20</td>
-            <td>33</td>
-            <td>45</td>
-            <td>Last 5</td>
-        </tr>
-        <!--gap here-->
-        <tr>
-            <td colspan="26">14 Man city</td>
-            <td>20</td>
-            <td>14</td>
-            <td>3</td>
-            <td>3</td>
-            <td>53</td>
-            <td>20</td>
-            <td>33</td>
-            <td>45</td>
-            <td>Last 5</td>
-        </tr>
-        <!--gap here-->
-        <tr>
-            <td colspan="26">15 Man city</td>
-            <td>20</td>
-            <td>14</td>
-            <td>3</td>
-            <td>3</td>
-            <td>53</td>
-            <td>20</td>
-            <td>33</td>
-            <td>45</td>
-            <td>Last 5</td>
-        </tr>
-        <!--gap here-->
-        <tr>
-            <td colspan="26">16 Man city</td>
-            <td>20</td>
-            <td>14</td>
-            <td>3</td>
-            <td>3</td>
-            <td>53</td>
-            <td>20</td>
-            <td>33</td>
-            <td>45</td>
-            <td>Last 5</td>
-        </tr>
-        <!--gap here-->
-        <tr>
-            <td colspan="26">17 Man city</td>
-            <td>20</td>
-            <td>14</td>
-            <td>3</td>
-            <td>3</td>
-            <td>53</td>
-            <td>20</td>
-            <td>33</td>
-            <td>45</td>
-            <td>Last 5</td>
-        </tr>
-        <!--gap here-->
-        <tr>
-            <td colspan="26">18 Man city</td>
-            <td>20</td>
-            <td>14</td>
-            <td>3</td>
-            <td>3</td>
-            <td>53</td>
-            <td>20</td>
-            <td>33</td>
-            <td>45</td>
-            <td>Last 5</td>
-        </tr>
-        <!--gap here-->
-        <tr>
-            <td colspan="26">19 Man city</td>
-            <td>20</td>
-            <td>14</td>
-            <td>3</td>
-            <td>3</td>
-            <td>53</td>
-            <td>20</td>
-            <td>33</td>
-            <td>45</td>
-            <td>Last 5</td>
-        </tr>
-        <!--gap here-->
-        <tr>
-            <td colspan="26">20 Man city </td>
-            <td>20</td>
-            <td>14</td>
-            <td>3</td>
-            <td>3</td>
-            <td>53</td>
-            <td>20</td>
-            <td>33</td>
-            <td>45</td>
-            <td>Last 5</td>
-        </tr>
-    </table>
+    <header>
+        <div class="header container">
+            <div class="side-nav-2">
+                <div class="title-heading">
+                    <h1>I'm</h1>
+                    <span>S</span><span>a</span><span>r</span><span>a</span><span>v</span><span>a</span><span>n</span><span>a</span><span>n</span>
+                </div>
+            </div>
+        </div>
+    </header>
+    <section class="header container-2">
+        <div class="side-nav-3">
+            <div class="title-heading">
+                <h1>I'm</h1>
+                <span>S</span><span>a</span><span>r</span><span>a</span><span>v</span><span>a</span><span>n</span><span>a</span><span>n</span>
+            </div>
+        </div>
+    </section>
 </body>
 
 </html>
