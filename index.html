@@ -104,16 +104,17 @@
             background-color: #040b14;
             height: 100vh;
             width: 25%;
+            /* z-index: 1; */
         }
 
         .side-nav-2 {
-            position: fixed;
+            position: absolute;
             top: 0;
             right: 0;
             bottom: 0;
             background-color: #040b14;
-            height: 100vh;
-            width: 18%;
+            height: 107vh;
+            width: 8%;
         }
 
         img {
@@ -229,16 +230,6 @@
         }
 
         /* header */
-        header {
-            height: 100vh;
-            background: url("./background-imgs/profile-pic-8.JPG");
-            background-size: contain;
-            background-position: 50%;
-            object-fit: contain;
-            object-position: top;
-            background-repeat: no-repeat;
-        }
-
         .title-heading>span {
             display: block;
             color: #adb5bd;
@@ -305,8 +296,29 @@
             }
         }
 
-        .container-2 {
-            display: none;
+        .header {
+            width: 1200px;
+        }
+
+        .about-me {
+            /* background-color: #0a58ca; */
+            margin-bottom: 2em;
+            margin-top: 2em;
+            margin-left: -20rem;
+        }
+
+        .about-me::after {
+            content: '';
+            height: 6px;
+            background-color: #0a58ca;
+            display: block;
+            width: 66%;
+
+        }
+
+        .paragraph {
+            padding: 1em;
+            margin-left: 22em;
         }
     </style>
 </head>
@@ -345,22 +357,67 @@
     </div>
     <header>
         <div class="header container">
-            <div class="side-nav-2">
-                <div class="title-heading">
-                    <h1>I'm</h1>
-                    <span>S</span><span>a</span><span>r</span><span>a</span><span>v</span><span>a</span><span>n</span><span>a</span><span>n</span>
-                </div>
-            </div>
+            <img src="./background-imgs/profile-pic-8.JPG" alt="">
+
         </div>
-    </header>
-    <section class="header container-2">
-        <div class="side-nav-3">
+        <div class="side-nav-2">
             <div class="title-heading">
                 <h1>I'm</h1>
                 <span>S</span><span>a</span><span>r</span><span>a</span><span>v</span><span>a</span><span>n</span><span>a</span><span>n</span>
             </div>
         </div>
-    </section>
+    </header>
+    <article class="about">
+        <div class="about-me">
+            <h1>About me</h1>
+        </div>
+        <div class="paragraph">
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequuntur a rem quas voluptate esse quod
+                reprehenderit soluta corrupti delectus error officia, qui animi facilis sapiente dignissimos inventore
+                harum? Cumque doloremque placeat sapiente rem ducimus pariatur nam eveniet modi architecto vel soluta
+                fuga
+                harum sequi necessitatibus dolorum, accusantium eos mollitia. Fugiat eligendi velit ducimus quo, aliquam
+                sapiente ipsum tenetur voluptas voluptatem rerum nam porro beatae rem ratione inventore voluptates
+                quidem
+                eius dolor. Nihil nemo illum vel ab, possimus repellat dicta modi minus impedit maiores, blanditiis quod
+                molestias cupiditate sunt. Eius explicabo asperiores voluptatem corporis fugit temporibus provident eos
+                illum animi quasi?</p>
+        </div>
+    </article>
+    <article class="about">
+        <div class="about-me">
+            <h1>Services</h1>
+        </div>
+        <div class="paragraph">
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequuntur a rem quas voluptate esse quod
+                reprehenderit soluta corrupti delectus error officia, qui animi facilis sapiente dignissimos inventore
+                harum? Cumque doloremque placeat sapiente rem ducimus pariatur nam eveniet modi architecto vel soluta
+                fuga
+                harum sequi necessitatibus dolorum, accusantium eos mollitia. Fugiat eligendi velit ducimus quo, aliquam
+                sapiente ipsum tenetur voluptas voluptatem rerum nam porro beatae rem ratione inventore voluptates
+                quidem
+                eius dolor. Nihil nemo illum vel ab, possimus repellat dicta modi minus impedit maiores, blanditiis quod
+                molestias cupiditate sunt. Eius explicabo asperiores voluptatem corporis fugit temporibus provident eos
+                illum animi quasi?</p>
+        </div>
+    </article>
+    <article class="about">
+        <div class="about-me">
+            <h1>About me</h1>
+        </div>
+        <div class="paragraph">
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequuntur a rem quas voluptate esse quod
+                reprehenderit soluta corrupti delectus error officia, qui animi facilis sapiente dignissimos inventore
+                harum? Cumque doloremque placeat sapiente rem ducimus pariatur nam eveniet modi architecto vel soluta
+                fuga
+                harum sequi necessitatibus dolorum, accusantium eos mollitia. Fugiat eligendi velit ducimus quo, aliquam
+                sapiente ipsum tenetur voluptas voluptatem rerum nam porro beatae rem ratione inventore voluptates
+                quidem
+                eius dolor. Nihil nemo illum vel ab, possimus repellat dicta modi minus impedit maiores, blanditiis quod
+                molestias cupiditate sunt. Eius explicabo asperiores voluptatem corporis fugit temporibus provident eos
+                illum animi quasi?</p>
+        </div>
+    </article>
 </body>
 
 </html>
